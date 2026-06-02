@@ -1,4 +1,0 @@
-@EndUserText.label: 'Serviec definitaion for ZGL03TEST'
-define service ZUI__ZGL03TEST {
-  expose ZFA_R_ZGL03TEST as ZGL03_TEST;
-}
