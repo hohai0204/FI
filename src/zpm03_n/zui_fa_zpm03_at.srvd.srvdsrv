@@ -1,4 +1,0 @@
-@EndUserText.label: 'Service Definition ZPM03 Analytical'
-define service ZUI_FA_ZPM03_AT {
-  expose ZFA_Q_ZPM03_AT_QUERY;
-}
