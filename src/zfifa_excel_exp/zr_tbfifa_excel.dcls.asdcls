@@ -1,6 +1,0 @@
-@EndUserText.label: 'ZR_TBFIFA_EXCEL'
-@MappingRole: true
-define role ZR_TBFIFA_EXCEL {
-  grant select on ZR_TBFIFA_EXCEL
-  where TRUE;
-}
