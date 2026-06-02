@@ -1,4 +1,0 @@
-@EndUserText.label: 'Service Defination for ZGL01 (Excel)'
-define service ZFA_UI_ZGL01_EX {
-  expose ZFA_R_ZGL01_EX as ZGL01_EX;
-}
