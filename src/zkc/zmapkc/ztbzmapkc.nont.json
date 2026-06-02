@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZTBZMAPKC",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZTBZMAPKC",
+  "sapObjectType": "ZTBZMAPKC",
+  "rootNode": true
+}

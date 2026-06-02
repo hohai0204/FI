@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serviec Definition for ZAA01_N'
+define service ZFA_UI_ZAA91_N {
+  expose ZFA_R_ZAA01_N as ZAA01_N;
+}

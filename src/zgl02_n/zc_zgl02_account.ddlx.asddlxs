@@ -1,0 +1,178 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'GL Account'
+@UI.headerInfo.typeNamePlural: 'GL Account'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'GLAccount'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'GLAccount'
+annotate entity ZC_ZGL02_ACCOUNT with
+{
+
+  @EndUserText.label: 'Company Code'
+  @UI.identification: [ {
+    position: 20,
+    label: 'Mã công ty'
+  } ]
+  @UI.lineItem: [{
+    position: 20,
+    label: 'Company Code'
+   }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+        name: 'I_CompanyCode',
+        element: 'CompanyCode'
+    }
+   }]
+  @Consumption.filter: {
+   multipleSelections: false,
+   mandatory: true,
+   selectionType: #SINGLE,
+   defaultValue: '1100'
+  }
+  CompanyCode;
+
+  @EndUserText.label: 'GL Account'
+  @UI.identification: [ {
+    position: 10,
+    label: 'GL Account'
+  }]
+  @UI.lineItem: [{
+    position: 10,
+    label: 'GL Account'
+   },
+   {  
+     type: #FOR_ACTION,
+     dataAction: 'createPDF',
+     label: 'Create PDF',
+     invocationGrouping: #CHANGE_SET
+  }]
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+        name: 'ZI_ZGL02_GL_ACCOUNT',
+        element: 'GLAccount'
+    }
+  }]
+  GLAccount;
+
+  @EndUserText.label: 'Period'
+  @UI.identification: [{
+    position: 30,
+    label: 'Period'
+  }]
+  @UI.lineItem: [{
+    position: 30,
+    label: 'Period'
+  }]
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+        name: 'I_CalendarMonth',
+        element: 'CalendarMonth'
+    }
+  }]
+  period;
+
+  @EndUserText.label: 'FiscalYear'
+  @UI.identification: [{
+    position: 40,
+    label: 'FiscalYear'
+  }]
+  @UI.lineItem: [{
+    position: 40,
+    label: 'FiscalYear'
+  }]
+  @UI.selectionField: [{ position: 40 }]
+  //  @Consumption.valueHelpDefinition: [{
+  //    entity: {
+  //        name: 'I_GLAccount',
+  //        element: 'FiscalYear'
+  //    }
+  //  }]
+  @Consumption.filter: {
+    multipleSelections: false,
+    mandatory: true,
+    selectionType: #SINGLE,
+    defaultValue: '2025'
+  }
+  FiscalYear;
+
+  @EndUserText.label: 'Display Subtotal Option'
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  @Consumption.filter: {
+    mandatory: true,
+    defaultValue: 'DETAIL'
+  }
+  SubtotalOpt;
+
+
+  @EndUserText.label: 'Số dư đầu kỳ - Nợ'
+  @UI.identification: [ {
+    position: 50,
+    label: 'Số dư đầu kỳ - Nợ'
+  } ]
+  @UI.lineItem: [{
+    position: 50,
+    label: 'Số dư đầu kỳ - Nợ'
+   }]
+  DauKyNo;
+
+  @EndUserText.label: 'Số dư đầu kỳ - Có'
+  @UI.identification: [ {
+    position: 60,
+    label: 'Số dư đầu kỳ - Có'
+  } ]
+  @UI.lineItem: [{
+    position: 60,
+    label: 'Số dư đầu kỳ - Có'
+   }]
+  DauKyCo;
+
+  @EndUserText.label: 'Số phát sinh - Nợ'
+  @UI.identification: [ {
+    position: 70,
+    label: 'Số phát sinh - Nợ'
+  } ]
+  @UI.lineItem: [{
+    position: 70,
+    label: 'Số phát sinh - Nợ'
+   }]
+  TrongKyNo;
+
+  @EndUserText.label: 'Số phát sinh - Có'
+  @UI.identification: [ {
+    position: 80,
+    label: 'Số phát sinh - Có'
+  } ]
+  @UI.lineItem: [{
+    position: 80,
+    label: 'Số phát sinh - Có'
+   }]
+  TrongkyCo;
+
+  @EndUserText.label: 'Số dư cuối kỳ - Nợ'
+  @UI.identification: [ {
+    position: 90,
+    label: 'Số dư cuối kỳ - Nợ'
+  } ]
+  @UI.lineItem: [{
+    position: 90,
+    label: 'Số dư cuối kỳ - Nợ'
+   }]
+  CuoikyNo;
+
+  @EndUserText.label: 'Số dư cuối kỳ - Có'
+  @UI.identification: [ {
+    position: 100,
+    label: 'Số dư cuối kỳ - Có'
+  } ]
+  @UI.lineItem: [{
+    position: 100,
+    label: 'Số dư cuối kỳ - Có'
+   }]
+  CuoikyCo;
+
+}

@@ -1,0 +1,102 @@
+@Metadata.layer: #CORE
+annotate entity ZR_FA_ZGL04N with
+{
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.filter.mandatory: true
+  @EndUserText.label: 'Company Code'
+  companyCode;
+  @Consumption.filter.selectionType: #INTERVAL
+  @UI.lineItem: [{ position: 20, hidden: true }]
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  @EndUserText.label: 'Posting Date'
+  postingDate;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.filter.mandatory: true
+  @EndUserText.label: 'Fiscal Year'
+  fiscalYear;
+
+  @UI.lineItem:       [{ position: 40 }]
+  //  @UI.identification: [{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  @EndUserText.label: 'Include Reversed Documents'
+  @Consumption.filter.mandatory: true
+  incl_reserve;
+
+  @UI.lineItem:       [{ position: 50  }]
+  //  @UI.identification: [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  @EndUserText.label: 'Người lập'
+  Nguoi_lap;
+
+  @UI.lineItem:       [{ position: 60  }]
+  //  @UI.identification: [{ position: 60 }]
+  @UI.selectionField: [{ position: 60 }]
+  @EndUserText.label: 'Kế toán trưởng'
+  Ke_toan;
+
+  @UI.lineItem:       [{ position: 70  }]
+  //  @UI.identification: [{ position: 70 }]
+  @UI.selectionField: [{ position: 70 }]
+  @EndUserText.label: 'Giám đốc'
+  Giam_doc;
+
+
+  @Consumption.filter.hidden: true
+  ReportId;
+  @Consumption.filter.hidden: true
+  ObjectId;
+  @Consumption.filter.hidden: true
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  @EndUserText.label: 'Attachment (PDF)'
+  Attachment;
+  @Consumption.filter.hidden: true
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60 }]
+  @EndUserText.label: 'Attachment (Excel)'
+  Attachment_Exc;
+  @UI.hidden: true
+  Mimetype;
+  @UI.hidden: true
+  Filename;
+  @UI.hidden: true
+  uuid;
+
+
+  //  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  @EndUserText.label: 'Số chứng từ'
+  accountingdocument;
+  //  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  @EndUserText.label: 'Ngày chứng từ'
+  documentdate;
+  //  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  @EndUserText.label: 'Diễn giải'
+  description;
+  //  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  @EndUserText.label: 'Tài khoản Nợ'
+  s_glaccount;
+  //  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  @EndUserText.label: 'Tài khoản Có'
+  h_glaccount;
+  //  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  @EndUserText.label: 'Nợ VND'
+  s_amount;
+  //  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  @EndUserText.label: 'Có VND'
+  h_amount;
+
+
+}

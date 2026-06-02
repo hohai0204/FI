@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for ZGL04N'
+define service ZUI_FA_ZGL04N {
+  expose ZR_FA_ZGL04N;
+  expose ZR_FA_ZGL04N_EXCEL;
+}

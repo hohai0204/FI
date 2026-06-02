@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+annotate entity ZFA_R_ZGL03_EX with
+{
+  @UI.lineItem: [{ position: 10 }]
+  @EndUserText.label: 'Chỉ tiêu'
+  chi_tieu;
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText.label: 'Mã số'
+  ma_so;
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Thuyết minh'
+  thuyet_minh;
+  @UI.lineItem: [{ position: 40 }]
+  @EndUserText.label: 'Kỳ báo cáo'
+  ky_bao_cao;
+  @UI.lineItem: [{ position: 50 }]
+  @EndUserText.label: 'Kỳ so sánh'
+  ky_so_sanh;
+  @UI.lineItem: [{ position: 60 }]
+  @EndUserText.label: 'Lũy kế so sánh'
+  luy_ke_so_sanh;
+  @UI.lineItem: [{ position: 70 }]
+  @EndUserText.label: 'Lũy kế báo cáo'
+  luy_ke_bao_cao;
+
+  @UI.identification: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Company Code'
+  companycode;
+
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.filter.mandatory: true
+  @EndUserText.label: 'Kỳ báo cáo'
+  ky_bao_cao_t;
+
+  @UI.identification: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.filter.mandatory: true
+  @EndUserText.label: 'Năm báo cáo'
+  nam_bao_cao;
+
+  @UI.identification: [{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  @Consumption.filter.mandatory: true
+  @EndUserText.label: 'Kỳ so sánh'
+  Ky_so_sanh_t;
+
+  @UI.identification: [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  @Consumption.filter.mandatory: true
+  @EndUserText.label: 'Năm so sánh'
+  nam_so_sanh;
+
+}

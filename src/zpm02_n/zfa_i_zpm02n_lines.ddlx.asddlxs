@@ -1,0 +1,178 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Sổ tổng hợp công nợ phải trả NCC',
+                typeNamePlural: 'Sổ tổng hợp công nợ phải trả NCC',
+                title: { type: #STANDARD, label: 'GLAccount', value: 'GLAccount' } },
+                /* Presentation Variant */
+  presentationVariant: [{
+    sortOrder: [
+      { by: 'GLAccount',  direction: #ASC }
+    ],
+
+    visualizations: [{ type: #AS_LINEITEM }]
+  }]
+
+}
+annotate entity zfa_i_zpm02n_lines with
+{
+  @EndUserText.label: 'Mã công ty'
+  @UI.facet: [ { label: 'General Information',
+                 id: 'GeneralInfo',
+                 purpose: #STANDARD,
+                 position: 10 ,
+                 type: #IDENTIFICATION_REFERENCE }
+
+              ]
+  @UI: {
+  identification: [ { position: 10 }],
+  selectionField: [ { position: 10 } ],
+  lineItem: [ { position: 10 }]
+  }
+  CompanyCode;
+
+  @EndUserText.label: 'Năm tài chính'
+  @UI: {
+  identification: [ { position: 20 } ],
+  selectionField: [ { position: 20 } ],
+  lineItem: [ { position: 20 } ]
+  }
+  @Consumption.filter: {
+  multipleSelections: false,
+  mandatory: true,
+  selectionType: #SINGLE,
+  defaultValue: '2025'
+  }
+  FiscalYear;
+
+  @EndUserText.label: 'Posting date From - To'
+  @UI: {
+  identification: [ { position: 30 } ],
+  lineItem: [ { position: 30 } ]
+  }
+  postingdate_fromto;
+
+  @EndUserText.label: 'Số tài khoản hạch toán công nợ'
+  @UI: {
+  identification: [ { position: 40 } ],
+  selectionField: [ { position: 40 } ],
+  lineItem: [ { position: 40 } ]
+  }
+  GLAccount;
+
+  @EndUserText.label: 'Nhóm NCC'
+  @UI: {
+  identification: [ { position: 50 } ],
+  selectionField: [ { position: 50 } ],
+  lineItem: [ { position: 50 } ]
+  }
+  SupplierAccountGroup;
+
+  @EndUserText.label: 'Mã NCC'
+  @UI: {
+  identification: [ { position: 60 } ],
+  selectionField: [ { position: 60 } ],
+  lineItem: [ { position: 60 } ]
+  }
+  Supplier;
+
+  @EndUserText.label: 'Đơn vị tiền tệ'
+  @UI: {
+  identification: [ { position: 70 } ],
+  selectionField: [ { position: 70 } ],
+  lineItem: [ { position: 70 } ]
+  }
+  BalanceTransactionCurrency;
+
+  @EndUserText.label: 'Đầu kỳ nợ Ngoại tệ'
+  @UI: {
+  identification: [ { position: 80 } ],
+  selectionField: [ { position: 80 } ],
+  lineItem: [ { position: 80 } ]
+  }
+  dauki_no_nt;
+  @EndUserText.label: 'Đầu kỳ có Ngoại tệ'
+  @UI: {
+  identification: [ { position: 90 } ],
+  selectionField: [ { position: 90 } ],
+  lineItem: [ { position: 90 } ]
+  }
+  dauki_co_nt;
+
+  @EndUserText.label: 'Đầu kỳ nợ Việt nam đồng'
+  @UI: {
+  identification: [ { position: 100 } ],
+  selectionField: [ { position: 100 } ],
+  lineItem: [ { position: 100 } ]
+  }
+  dauki_no_vn;
+
+  @EndUserText.label: 'Đầu kỳ có Việt nam đồng'
+  @UI: {
+  identification: [ { position: 110 } ],
+  selectionField: [ { position: 110 } ],
+  lineItem: [ { position: 110 } ]
+  }
+  dauki_co_vn;
+
+  @EndUserText.label: 'Phát sinh nợ Ngoại tệ'
+  @UI: {
+  identification: [ { position: 120 } ],
+  selectionField: [ { position: 120 } ],
+  lineItem: [ { position: 120 } ]
+  }
+  phatsinh_no_nt;
+  @EndUserText.label: 'Phát sinh có Ngoại tệ'
+  @UI: {
+  identification: [ { position: 130 } ],
+  selectionField: [ { position: 130 } ],
+  lineItem: [ { position: 130 } ]
+  }
+  phatsinh_co_nt;
+
+  @EndUserText.label: 'Phát sinh nợ Việt nam đồng'
+  @UI: {
+  identification: [ { position: 140 } ],
+  selectionField: [ { position: 140 } ],
+  lineItem: [ { position: 140 } ]
+  }
+  phatsinh_no_vn;
+
+  @EndUserText.label: 'Phát sinh có Việt nam đồng'
+  @UI: {
+  identification: [ { position: 150 } ],
+  selectionField: [ { position: 150 } ],
+  lineItem: [ { position: 150 } ]
+  }
+  phatsinh_co_vn;
+
+  @EndUserText.label: 'Cuối kỳ nợ Ngoại tệ'
+  @UI: {
+  identification: [ { position: 160 } ],
+  selectionField: [ { position: 160 } ],
+  lineItem: [ { position: 160 } ]
+  }
+  cuoiki_no_nt;
+  @EndUserText.label: 'Cuối kỳ có Ngoại tệ'
+  @UI: {
+  identification: [ { position: 170 } ],
+  selectionField: [ { position: 170 } ],
+  lineItem: [ { position: 170 } ]
+  }
+  cuoiki_co_nt;
+
+  @EndUserText.label: 'Cuối kỳ nợ Việt nam đồng'
+  @UI: {
+  identification: [ { position: 180 } ],
+  selectionField: [ { position: 180 } ],
+  lineItem: [ { position: 180 } ]
+  }
+  cuoiki_no_vn;
+
+  @EndUserText.label: 'Cuối kỳ có Việt nam đồng'
+  @UI: {
+  identification: [ { position: 190 } ],
+  selectionField: [ { position: 190 } ],
+  lineItem: [ { position: 190 } ]
+  }
+  cuoiki_co_vn;
+}

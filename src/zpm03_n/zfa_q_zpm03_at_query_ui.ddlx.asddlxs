@@ -1,0 +1,36 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'VAT Report',
+    typeNamePlural: 'VAT Reports',
+    title: { type: #STANDARD, value: 'AccountingDocument' }
+  }
+}
+annotate view ZFA_Q_ZPM03_AT_QUERY with {
+
+  @UI.lineItem: [{ position: 10 }]
+  CompanyCode;
+
+  @UI.lineItem: [{ position: 20 }]
+  AccountingDocument;
+
+  @UI.lineItem: [{ position: 30 }]
+  Period;
+
+  @UI.lineItem: [{ position: 40 }]
+  SupplierName;
+
+  @UI.lineItem: [{ position: 50 }]
+  TaxCode;
+
+  @UI.lineItem: [{ position: 60 }]
+  Quantity;
+
+  @UI.lineItem: [{ position: 70 }]
+  amount;
+
+  @UI.lineItem: [{ position: 80 }]
+  Taxamount;
+
+  
+}

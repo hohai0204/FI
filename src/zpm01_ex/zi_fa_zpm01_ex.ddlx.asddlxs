@@ -1,0 +1,165 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Sổ chi tiết công nợ phải trả NCC, NV',
+    typeNamePlural: 'Sổ chi tiết công nợ phải trả NCC, NV'
+  }
+}
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'AccountingDocument'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'AccountingDocument'
+annotate entity ZI_FA_ZPM01_EX with
+{
+  @UI.facet: [
+    {
+      id:       'lineitem',
+      purpose:  #STANDARD,
+      type:     #IDENTIFICATION_REFERENCE,
+      label:    'General Information',
+      position: 10
+    }
+  ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem:       [ { position: 10, label: 'Thông tin NCC' } ]
+  des;
+  
+    @UI.identification: [ { position: 11 } ]
+  @UI.lineItem:       [ { position: 11, label: 'Số chứng từ' } ]
+  AccountingDocument;
+  
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem:       [ { position: 20, label: 'Ngày hạch toán' } ]
+  @UI.selectionField: [ { position: 40 } ]
+  @EndUserText.label: 'Posting date'
+  @Consumption.filter: {
+    multipleSelections: false,
+    mandatory: true,
+    selectionType: #INTERVAL
+  }
+  PostingDate;
+
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem:       [ { position: 30, label: 'Ngày hóa đơn' } ]
+  DocumentDate;
+  
+//    @UI.identification: [ { position: 40 } ]
+//  @UI.lineItem:       [ { position: 40, label: 'Số tờ khai' } ]
+//  Z_TOKHAI;
+//  
+//    @UI.identification: [ { position: 50 } ]
+//  @UI.lineItem:       [ { position: 50, label: 'Số Invoice' } ]
+//  Z_INVOICENO;
+//  
+
+      @UI.identification: [ { position: 60 } ]
+  @UI.lineItem:       [ { position: 60, label: 'Số hóa đơn' } ]
+  DocumentReferenceID;
+  
+      @UI.identification: [ { position: 70 } ]
+  @UI.lineItem:       [ { position: 70, label: 'Diễn giải' } ]
+  AccountingDocumentHeaderText;
+  
+  @UI.selectionField: [ { position: 10 } ]
+  @EndUserText.label: 'Supplier'
+   @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'I_Supplier',
+  element: 'Supplier'}
+  }]
+  Supplier;
+
+  @UI.selectionField: [ { position: 20 } ]
+  @EndUserText.label: 'Company Code'
+//  @Consumption.filter.mandatory: true
+  @Consumption.filter: {
+      multipleSelections: false,
+      mandatory: true,
+      selectionType: #SINGLE,
+      defaultValue: '1100'
+  }
+  CompanyCode;
+  
+  @UI.selectionField: [ { position: 30 } ]
+  @EndUserText.label: 'Fiscal year'
+    @Consumption.filter: {
+  multipleSelections: false,
+  mandatory: true,
+  selectionType: #SINGLE,
+  defaultValue: '2025'
+  }
+  FiscalYear;
+  
+
+        @UI.identification: [ { position: 80 } ]
+  @UI.lineItem:       [ { position: 80, label: 'Tài khoản' } ]
+    @UI.selectionField: [ { position: 50 } ]
+  @EndUserText.label: 'G/L Account'
+  @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'I_GLAccountStdVH',
+  element: 'GLAccount'}
+  }]
+  GLAccount_26;
+  
+    @UI.selectionField: [ { position: 60 } ]
+  @EndUserText.label: 'Supplier group'
+       @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'I_SupplierAccountGroup',
+  element: 'SupplierAccountGroup'}
+  }]
+  SupplierAccountGroup;
+  
+    @UI.selectionField: [ { position: 70 } ]
+  @EndUserText.label: 'Include Reversed Documents'
+    @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'i_journalentry',
+  element: 'IsReversal'}
+  }]
+  IsReversal;
+  
+  @UI.identification: [ { position: 90 } ]
+  @UI.lineItem:       [ { position: 90, label: 'Tài khoản đối ứng ' } ]
+  GLAccount;
+
+  @UI.identification: [ { position: 100 } ]
+  @UI.lineItem:       [ { position: 100, label: 'Loại tiền' } ]
+  TransactionCurrency;
+
+  @UI.identification: [ { position: 110 } ]
+  @UI.lineItem:       [ { position: 110, label: 'Tỷ giá thuế' } ]
+  TaxExchangeRate;
+
+  @UI.identification: [ { position: 300 } ]
+  @UI.lineItem:       [ { position: 300, label: 'Nợ VND' } ]
+  @Consumption.semanticObject: 'TransactionCurrency'
+  ZNO_VND;
+
+  @UI.identification: [ { position: 310 } ]
+  @UI.lineItem:       [ { position: 310, label: 'Có VND' } ]
+  ZCO_VND;
+
+  @UI.identification: [ { position: 320 } ]
+  @UI.lineItem:       [ { position: 320, label: 'Nợ ngoại tệ' } ]
+  ZNO_NT;
+
+  @UI.identification: [ { position: 330 } ]
+  @UI.lineItem:       [ { position: 330, label: 'Có ngoại tệ' } ]
+  ZCO_NT;
+  
+  @UI.identification: [ { position: 340 } ]
+  @UI.lineItem:       [ { position: 340, label: 'Lũy kế quy đổi VND- Nợ' } ]
+  ZNO;
+
+  @UI.identification: [ { position: 350 } ]
+  @UI.lineItem:       [ { position: 350, label: 'Lũy kế quy đổi VND- Có' } ]
+  ZCO;
+  
+//   @Consumption.valueHelpDefinition: [{ entity:{
+//  name: 'ZI_FA_LAYOUT_EX',
+//  element: 'value_low'},
+//   distinctValues: true
+//  }]
+//  @Consumption.filter.selectionType: #SINGLE
+//    @UI.selectionField: [ { position: 80 } ]
+//      @EndUserText.label: 'Layout excel'
+//  ZLAYOUT;
+ }

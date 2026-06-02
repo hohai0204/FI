@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition ZGL02'
+define service ZUI_ZGL02 {
+  expose ZC_ZGL02_ACCOUNT;
+}

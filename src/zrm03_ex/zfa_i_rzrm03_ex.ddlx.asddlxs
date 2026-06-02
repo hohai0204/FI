@@ -1,0 +1,404 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Bảng kê thuế GTGT Đầu ra'
+@UI.headerInfo.typeNamePlural: 'Bảng kê thuế GTGT Đầu ra'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'AccountingDocument'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'taxcode_desc'
+annotate entity ZFA_I_RZRM03_EX
+    with 
+{
+ @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+ hidden: true
+  } ]
+  @UI.lineItem: [ {
+ hidden: true
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+       @Consumption.valueHelpDefinition: [{
+    qualifier: '',
+    entity: {
+        name: 'I_CompanyCode',
+        element: 'CompanyCode'
+    },
+    distinctValues: true,
+    useForValidation: true
+  }]
+  CompanyCode;
+    @UI.selectionField: [ {
+    position: 20 
+  } ]
+    @UI.identification: [ {
+ position: 50 , 
+    label: 'Ngày hạch toán'
+  } ]
+  @UI.lineItem: [ {
+  position: 50 , 
+    label: 'Ngày hạch toán'
+  } ]
+  PostingDate;
+   @UI.identification: [ {
+    position: 10 , 
+    label: 'Tax period (Kỳ tính thuế)'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Tax period (Kỳ tính thuế)'
+  } ]
+  @Consumption.filter.hidden: true
+  Period;
+   @EndUserText.label: 'Người nộp thuế'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Người nộp thuế'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Người nộp thuế'
+  } ]
+   @Consumption.filter.hidden: true
+  tencty_vn;
+  
+  @EndUserText.label: 'Địa chỉ công ty'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Địa chỉ công ty'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Địa chỉ công ty'
+  } ]
+  @Consumption.filter.hidden: true
+  diachi_vn;
+
+  
+  @UI.identification: [ {
+    position: 40 , label: 'Mã số thuế'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , label: 'Mã số thuế'
+  } ]
+  @Consumption.filter.hidden: true
+    MST_Company;
+   @UI.identification: [ {
+    position: 50 , label: 'STT'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , label: 'STT'
+  } ]   
+  @Consumption.filter.hidden: true
+STT;
+    @EndUserText.label: 'Ký hiệu mẫu hóa đơn'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Ký hiệu mẫu hóa đơn'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Ký hiệu mẫu hóa đơn'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+    AssignmentReference;
+  
+  @UI.identification: [ {
+    position: 80 , label: 'Ký hiệu hóa đơn'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , label: 'Ký hiệu hóa đơn'
+  } ]
+  @Consumption.filter.hidden: true
+    Pattern;
+  @UI.identification: [ {
+    position: 90 ,label: 'Số hóa đơn'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,label: 'Số hóa đơn'
+  } ]
+  @Consumption.filter.hidden: true
+  Invoice_Num;
+  
+  @EndUserText.label: 'Journal Entry date'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Ngày tháng, năm phát hành'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Ngày tháng, năm phát hành'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+   DocumentDate;
+
+  @EndUserText.label: 'Tên người mua'
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Tên người mua'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Tên người mua'
+  } ]
+  @Consumption.filter.hidden: true
+Custom_Name;
+@UI.hidden: true
+    CustomerName;
+  @UI.hidden: true
+  CustomerAdress;
+  @UI.identification: [ {
+    position: 120 , label: 'Mã số thuế người mua'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , label: 'Mã số thuế người mua'
+  } ]
+@Consumption.filter.hidden: true
+Custom_MST;
+@UI.hidden: true
+MST_Customer;
+
+  @EndUserText.label: 'Mặt hàng'
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Mặt hàng'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'Mặt hàng'
+  } ]
+@Consumption.filter.hidden: true
+ itemtext;
+
+  @UI.identification: [ {
+    position: 170 , label: 'Doanh số bán chưa thuế',
+    criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , label: 'Doanh số bán chưa thuế',
+    criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @Consumption.filter.hidden: true
+amount;
+   @UI.identification: [ {
+    position: 180 , label: 'Ghi chú'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , label: 'Ghi chú'
+  } ] 
+  @Consumption.filter.hidden: true  
+  YY1_GCHD_JEI;
+  @UI.identification: [ {
+    position: 180, label: 'Tax code/ Mã loại thuế'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , label: 'Tax code/ Mã loại thuế'
+  } ]
+  @Consumption.filter.hidden: true
+ TaxCode;
+   @UI.identification: [ {
+    position: 190, label: 'Diễn giải loại thuế'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , label: 'Diễn giải loại thuế'
+  } ]
+  @Consumption.filter.hidden: true
+ taxcode_desc;
+ 
+  @UI.identification: [ {
+    position: 200 , label: 'Thuế suất (%)'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , label: 'Thuế suất (%)'
+  } ]
+  @Consumption.filter.hidden: true
+TaxRate;
+  @UI.identification: [ {
+    position: 210 , label: 'Thuế GTGT',
+    criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @UI.lineItem: [ {
+    position: 210 , label: 'Thuế GTGT',
+    criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+@Consumption.filter.hidden: true
+ Taxamount;
+  @EndUserText.label: 'Số phiếu hạch toán'
+  @UI.identification: [ {
+    position: 240 , 
+    label: 'Số phiếu hạch toán'
+  } ]
+  @UI.lineItem: [ {
+    position: 240 , 
+    label: 'Số phiếu hạch toán'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+AccountingDocument;
+ @EndUserText.label: 'Is Reversed'
+      @UI.identification: [ {
+    position: 250 , label: 'Is Reversed'
+  } ]
+  @UI.lineItem: [ {
+    position: 250 , label: 'Is Reversed'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  IsReversed;
+   @EndUserText.label: 'Chứng từ hủy'
+  @UI.identification: [ {
+    position: 250 , label: 'Chứng từ hủy'
+  } ]
+  @UI.lineItem: [ {
+    position: 250 , label: 'Chứng từ hủy'
+  } ]
+
+  reversedocument;
+
+  
+  @EndUserText.label: 'Nguồn gốc hóa đơn'
+  @UI.identification: [ {
+    position: 260 , 
+    label: 'Nguồn gốc hóa đơn'
+  } ]
+  @UI.lineItem: [ {
+    position: 260 , 
+    label: 'Nguồn gốc hóa đơn'
+  } ]
+@Consumption.filter.hidden: true
+ OriginalReferenceDocument;
+ 
+   @UI.identification: [ {
+    position: 270 , 
+    label: 'Tài khoản hạch toán thuế'
+  } ]
+  @UI.lineItem: [ {
+    position: 270 , 
+    label: 'Tài khoản hạch toán thuế'
+  } ]
+@Consumption.filter.hidden: true
+GLAccount;
+ @UI.hidden: true
+
+Totalamount;
+ @UI.hidden: true
+
+Totaltaxamount;
+   @UI.identification: [ {
+    position: 10 , 
+    label: 'Diễn giải loại hàng hóa dịch vụ'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Diễn giải loại hàng hóa dịch vụ', value: 'DGDV' , 
+    criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON, emphasized: true
+  } ]
+  @Consumption.filter.hidden: true
+DGDV;
+ @UI.identification: [ {
+    position: 300 , 
+    label: 'Doanh số bán sau thuế',
+    criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @UI.lineItem: [ {
+    position: 300 , 
+    label: 'Doanh số bán sau thuế',
+    criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @Consumption.filter.hidden: true
+Totalline;
+ 
+   @UI.identification: [ {
+    position: 310 , 
+    label: 'Doanh số mua vào chưa có thuế Ngoại tệ',
+      criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @UI.lineItem: [ {
+    position: 310 , 
+    label: 'Doanh số mua vào chưa có thuế Ngoại tệ',
+      criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+ TaxBaseAmountInTransCrcy;
+    @UI.identification: [ {
+    position: 310 , 
+    label: 'Thuế GTGT Ngoại tệ',
+      criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @UI.lineItem: [ {
+    position: 310 , 
+    label: 'Thuế GTGT Ngoại tệ',
+      criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  TAXAMOUNTTRANS;
+     @UI.hidden: true
+  TransactionCurrency;
+    @UI.identification: [ {
+    position: 310 , 
+    label: 'Tổng cộng Ngoại tệ',
+      criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+  @UI.lineItem: [ {
+    position: 310 , 
+    label: 'Tổng cộng Ngoại tệ',
+      criticality: 'row_type',  criticalityRepresentation: #WITHOUT_ICON
+  } ]
+amount_NT;
+ @UI.hidden: true
+Total_SUMLINE;
+ @UI.hidden: true
+SUMtotal;
+   @UI.hidden: true
+
+SUMtotal_VAT;
+@UI.hidden: true
+acc_item;
+@UI.hidden: true
+CompanyCodeCurrency;
+@UI.hidden: true
+Object;
+   @UI.identification: [ {
+    position: 300 , 
+    label: 'Mã số khách hàng'
+  } ]
+  @UI.lineItem: [ {
+    position: 300 , 
+    label: 'Mã số khách hàng'
+  } ]
+  @Consumption.filter.hidden: true
+customer;
+@UI.hidden: true
+tax_group;
+@UI.hidden: true
+AccountingDocumentType;
+
+@UI.hidden: true
+Quantity;
+@UI.hidden: true
+BaseUnit;
+@UI.hidden: true
+Price;
+@UI.hidden: true
+ DocumentReferenceID;
+    @UI.hidden: true
+    row_type;
+    @UI.hidden: true
+    Zsort;
+    @UI.lineItem: [{ position: 10 }]
+    attachment_exc;
+    @UI.hidden: true
+    filename_exc;
+    @UI.hidden: true
+    mimetype_exc;
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_TBFILE_ZMAPKC'
+@MappingRole: true
+define role ZR_TBFILE_ZMAPKC {
+  grant select on ZR_TBFILE_ZMAPKC
+  where TRUE;
+}

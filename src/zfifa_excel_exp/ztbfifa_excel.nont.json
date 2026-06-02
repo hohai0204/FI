@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZTBFIFA_EXCEL",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZTBFIFA_EXCEL",
+  "sapObjectType": "ZTBFIFA_EXCEL",
+  "rootNode": true
+}

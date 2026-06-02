@@ -1,0 +1,53 @@
+managed implementation in class ZBP_R_TBFIFA_EXCEL unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TBFIFA_EXCEL alias ZrTbfifaExcel
+persistent table ZTB_FIFA_EXCEL
+extensible
+draft table ZTBFIFA_EXCEL_D
+etag master LastChangedAt
+lock master total etag LocalLastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   ReportID,
+   ObjectID;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   ReportID,
+   ObjectID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTB_FIFA_EXCEL corresponding extensible
+  {
+    ReportID = REPORT_ID;
+    ObjectID = OBJECT_ID;
+    Attachment = ATTACHMENT;
+    Mimetype = MIMETYPE;
+    Filename = FILENAME;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+}

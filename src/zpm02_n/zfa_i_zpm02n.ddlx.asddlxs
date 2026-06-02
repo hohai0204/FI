@@ -1,0 +1,189 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Sổ tổng hợp công nợ phải trả NCC',
+                typeNamePlural: 'Sổ tổng hợp công nợ phải trả NCC',
+                title: { type: #STANDARD, label: 'GLAccount', value: 'GLAccount' } },
+/* Presentation Variant */
+  presentationVariant: [{
+    sortOrder: [
+      { by: 'GLAccount',  direction: #ASC },
+      { by: 'PostingDate',  direction: #ASC }
+    ],
+
+    visualizations: [{ type: #AS_LINEITEM }]
+  }]
+
+}
+annotate entity ZFA_I_ZPM02N with
+{
+
+  @EndUserText.label: 'Mã công ty'
+  @UI.facet: [ { label: 'General Information',
+                 id: 'GeneralInfo',
+                 purpose: #STANDARD,
+                 position: 10 ,
+                 type: #IDENTIFICATION_REFERENCE }
+                ,{ id:            'Items',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Items',
+                 position:        20,
+                 targetElement:   '_ItemsZPM02'}
+              ]
+  @UI: {
+  identification: [ { position: 10 }],
+  selectionField: [ { position: 10 } ],
+  lineItem: [ { position: 10 }]
+  }
+  @Consumption.filter: {
+      multipleSelections: false,
+      mandatory: true,
+      selectionType: #SINGLE,
+      defaultValue: '1100'
+  }
+  CompanyCode;
+
+  @EndUserText.label: 'Năm tài chính'
+  @UI: {
+  identification: [ { position: 20 } ],
+  selectionField: [ { position: 20 } ]
+  //  lineItem: [ { position: 20 } ]
+  }
+  @Consumption.filter: {
+  multipleSelections: false,
+  mandatory: true,
+  selectionType: #SINGLE,
+  defaultValue: '2025'
+  }
+  FiscalYear;
+
+  @EndUserText.label: 'Posting date'
+  @UI: {
+  //  identification: [ { position: 30 } ],
+  selectionField: [ { position: 30 } ]
+  }
+  @Consumption.filter: {
+    multipleSelections: false,
+    mandatory: true,
+    selectionType: #INTERVAL
+  }
+  PostingDate;
+
+  @EndUserText.label: 'Posting date From - To'
+  @UI: {
+  identification: [ { position: 30 } ],
+  lineItem: [ { position: 30 } ]
+  }
+  postingdate_fromto;
+
+  @EndUserText.label: 'G/L account'
+  @UI: {
+  //  identification: [ { position: 40 } ],
+  selectionField: [ { position: 40 } ]
+  }
+  @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'I_GLAccountStdVH',
+  element: 'GLAccount'}
+  }]
+  GLAccount;
+
+  @EndUserText.label: 'Nhóm NCC'
+  @UI: {
+  //  identification: [ { position: 50 } ],
+  selectionField: [ { position: 50 } ]
+  }
+  @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'I_SupplierAccountGroup',
+  element: 'SupplierAccountGroup'}
+  }]
+  SupplierAccountGroup;
+
+  @EndUserText.label: 'Mã NCC'
+  @UI: {
+  //  identification: [ { position: 60 } ],
+  selectionField: [ { position: 60 } ]
+  }
+  @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'I_Supplier',
+  element: 'Supplier'}
+  }]
+  Supplier;
+
+  @EndUserText.label: 'Đơn vị tiền tệ'
+  @UI: {
+  //  identification: [ { position: 70 } ],
+  selectionField: [ { position: 70 } ]
+  }
+  @Consumption.filter: {
+  multipleSelections: false,
+  selectionType: #SINGLE
+  }
+  @Consumption.valueHelpDefinition: [{ entity:{
+  name: 'I_CurrencyStdVH',
+  element: 'Currency'}
+  }]
+  BalanceTransactionCurrency;
+
+  @EndUserText.label: 'Người lập'
+  @UI: {
+  identification: [ { position: 80 } ],
+  selectionField: [ { position: 80 } ]
+  }
+  @Consumption.filter: {
+  multipleSelections: false,
+  selectionType: #SINGLE
+  }
+  nguoilap;
+
+  @EndUserText.label: 'Kế toán trưởng'
+  @UI: {
+  identification: [ { position: 90 } ],
+  selectionField: [ { position: 90 } ]
+  }
+  @Consumption.filter: {
+  multipleSelections: false,
+  selectionType: #SINGLE
+  }
+  ketoan;
+
+  @EndUserText.label: 'Giám đốc'
+  @UI: {
+  identification: [ { position: 100 } ],
+  selectionField: [ { position: 100 } ]
+  }
+  @Consumption.filter: {
+  multipleSelections: false,
+  selectionType: #SINGLE
+  }
+  giamdoc;
+
+  @UI: { lineItem: [ { position: 100 } ] }
+  attachment;
+
+  @UI: {
+  lineItem: [ { position: 130 } ]
+  }
+  filename;
+
+  @UI.hidden: true
+  mimetype;
+
+  @UI: { lineItem: [ { position: 140 } ] }
+  @EndUserText.label: 'Attachment Excel'
+  attachment_exc;
+  @UI.hidden: true
+  @UI: {
+  lineItem: [ { position: 150 } ]
+  }
+  @EndUserText.label: 'File Excel'
+  filename_exc;
+
+  @UI.hidden: true
+  mimetype_exc;
+
+  @UI.selectionField         : [{ position: 40 }]
+  @EndUserText.label         : 'Include Clearing Documents'
+  @Consumption.filter.mandatory: true
+  is_clrdoc;
+
+}

@@ -1,0 +1,16 @@
+managed implementation in class zbp_fa_r_phieuchi unique;
+strict ( 2 );
+
+define behavior for ZFA_R_PHIEUCHI //alias <alias_name>
+persistent table ztb_fi_pdf_draf
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Object;
+    action ( features : instance ) PrintPDF parameter ZC_PARAMETER_PM04 result [1] $self
+     { default function GetDefaultsForSign; }
+}

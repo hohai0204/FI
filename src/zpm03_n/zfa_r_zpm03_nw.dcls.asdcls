@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control for ZPM03'
+@MappingRole: true
+define role ZFA_R_ZPM03_NW {
+    grant 
+        select
+            on
+                ZFA_R_ZPM03_NW
+                    where
+                        ( CompanyCode ) = aspect pfcg_auth( F_BKPF_BUK, BUKRS, ACTVT = '03');
+                        
+}

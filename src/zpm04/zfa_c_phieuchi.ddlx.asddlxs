@@ -1,0 +1,269 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Phiếu Chi'
+@UI.headerInfo.typeNamePlural: 'Phiếu Chi'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'AccountingDocument'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'AccountingDocument'
+annotate view ZFA_C_PHIEUCHI with
+{
+  @EndUserText.label: 'Object'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+ @UI.identification: [ {
+    position: 10 , 
+    label: 'Object'
+  } , {  type: #FOR_ACTION, dataAction: 'PrintPDF', label: 'Print PDF' } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } 
+  , {  type: #FOR_ACTION, dataAction: 'PrintPDF', label: 'Print PDF' } ]
+  @UI.hidden: true
+  Object;
+  
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'Số'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 ,
+    label: 'Số'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  AccountingDocument;
+  
+  @UI.identification: [ {
+    position: 30 ,
+    hidden: true
+  } ]
+  @UI.lineItem: [ {
+    position: 30 ,
+    hidden: true
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+     @Consumption.valueHelpDefinition: [{
+    qualifier: '',
+    entity: {
+        name: 'I_CompanyCode',
+        element: 'CompanyCode'
+    },
+    distinctValues: true,
+    useForValidation: true
+  }]
+  CompanyCode;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.hidden: true
+  FiscalYear;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  PostingDate;
+  
+  @UI.identification: [ {
+    position: 60 ,
+    hidden: true
+  } ]
+  @UI.lineItem: [ {
+    position: 60 ,
+    hidden: true
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  
+  DocumentDate;
+  
+  @UI.identification: [ {
+    position: 70 ,
+    hidden: true
+  } ]
+  @UI.lineItem: [ {
+    position: 70 ,
+    hidden: true
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+      @Consumption.valueHelpDefinition: [{
+    entity: {
+        name: 'ZI_USER_VLH',
+        element: 'UserID'
+    }
+}]
+  CreateUser;
+  
+  @EndUserText.label: 'Tên công ty'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Tên công ty'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Tên công ty'
+  } ]
+  tencty_vn;
+  
+  @EndUserText.label: 'Địa chỉ công ty'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Địa chỉ công ty'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Địa chỉ công ty'
+  } ]
+  diachi_vn;
+  
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Mã số thuế'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 ,
+     label: 'Mã số thuế'
+  } ]
+
+  mst;
+  
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'Nợ '
+  } ]
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: 'Nợ'
+  } ]
+  Debit;
+  
+  @UI.identification: [ {
+    position: 120 ,
+    label: 'Có '
+  } ]
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: 'Có '
+  } ]
+  credit;
+  
+  @EndUserText.label: 'Họ tên người nhận tiền'
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Họ tên người nhận tiền'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'Họ tên người nhận tiền'
+  } ]
+  CustomerName;
+  
+  @EndUserText.label: 'Địa chỉ '
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'Địa chỉ '
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: 'Địa chỉ '
+  } ]
+  CustomerAdress;
+  
+  @UI.identification: [ {
+    position: 150 ,
+    label: 'Lý do chi'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 ,
+    label: 'Lý do chi'
+  } ]
+  Reason;
+  
+  @EndUserText.label: 'Số tiền/ Amount'
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'Số tiền/ Amount'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'Số tiền/ Amount'
+  } ]
+  Amountcredit;
+  
+  @UI.identification: [ {
+    position: 170 ,
+    label: 'Kèm theo'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 ,
+    label: 'Kèm theo'
+  } ]
+  DocumentReferenceID;
+  
+  @UI.identification: [ {
+    position: 180, label: 'Chứng từ gốc'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 ,
+    label: 'Chứng từ gốc'
+  } ]
+  Assignment;
+  
+//  @UI.identification: [ {
+//    position: 190 ,
+//    label: 'Tỷ giá ngoại tệ (Vàng, bạc, đá quý)'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 190 ,
+//    label: 'Tỷ giá ngoại tệ (Vàng, bạc, đá quý)'
+//  } ]
+  @UI.hidden: true
+  ExchangeRate;
+  
+//  @EndUserText.label: 'Số tiền quy đổi/ Transaction Currency'
+//  @UI.identification: [ {
+//    position: 200 , 
+//    label: 'Số tiền quy đổi/ Transaction Currency'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 200 , 
+//    label: 'Số tiền quy đổi/ Transaction Currency'
+//  } ]
+@UI.hidden: true
+  Amountcredit_VND;
+  
+      @UI.identification: [ {
+    position: 210 ,
+    label: 'File phiếu chi'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 ,
+    label: 'File phiếu chi'
+  } ]
+  attachment;
+  
+@UI.hidden: true
+  filename;
+  @UI.hidden: true
+  mimetype;
+}

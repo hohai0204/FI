@@ -1,0 +1,179 @@
+@Metadata.layer: #CORE
+@UI: {
+  createHidden: true,
+  deleteHidden: true,
+  updateHidden: true,
+
+  headerInfo: {
+    typeName: 'Chứng từ',
+    typeNamePlural: 'Sổ quỹ tiền mặt',
+    title: { type: #STANDARD, value: 'AccountingDocument' },
+    description: { type: #STANDARD, value: 'GLAccount' }
+  },
+
+  presentationVariant: [ {
+    sortOrder: [
+      { by: 'GLAccountText',  direction: #ASC },
+      { by: 'PostingDate',  direction: #ASC },
+      { by: 'AccountingDocument',  direction: #ASC }
+    ],
+    visualizations: [ { type: #AS_LINEITEM } ]
+  } ]
+}
+annotate entity ZI_FA_ZGL05_EX with
+{
+
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+  @EndUserText.label: 'Company Code'
+  @UI.identification: [ { position: 10 , label: 'Company Code' } ]
+   @UI.selectionField: [ {
+    position: 10
+  } ]
+  @Consumption.filter: {
+    multipleSelections: false,
+    mandatory: true,
+    selectionType: #SINGLE,
+    defaultValue: '1100'
+  }
+  CompanyCode;
+
+  @EndUserText.label: 'Fiscal Year'
+  @UI.identification: [ { position: 11 , label: 'Fiscal Year' } ]
+  @UI.selectionField: [ { position: 11 } ]
+  @Consumption.filter: {
+    multipleSelections: false,
+    mandatory: true,
+    selectionType: #SINGLE,
+    defaultValue: '2025'
+  }
+  FiscalYear;
+
+  @EndUserText.label: 'GL Acount'
+  @UI.identification: [ { position: 20 , label: 'GL Acount' } ]
+  @UI.selectionField: [ { position: 13 } ]
+  GLAccount;
+  
+    @EndUserText.label: 'Hiển thị cặp chứng từ huỷ'
+  @UI.selectionField: [ {
+    position: 15
+  } ]
+  @Consumption.filter: {
+  //    multipleSelections: false,
+  //    mandatory: false,
+  //    selectionType: #SINGLE,
+    defaultValue: 'X'
+  }
+  IsIncludeReversal;
+  
+ @EndUserText.label: 'Accounting Document' 
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem:       [ { position: 10, label: 'Thông tin Vendor/Customer' } ]
+  Des;
+  
+  @EndUserText.label: 'Posting Date'
+  @UI.identification: [ { position: 20 , label: 'Ngày ghi sổ' } ]
+  @UI.selectionField: [ { position: 12 } ]
+  @Consumption.filter: {
+    multipleSelections: false,
+    mandatory: true,
+    selectionType: #INTERVAL
+  }
+  @UI.lineItem:       [ { position: 20, label: 'Ngày ghi sổ' } ]
+  PostingDate;
+ 
+  @EndUserText.label: 'Document Date'
+  @UI.identification: [ { position: 30 , label: 'Ngày chứng từ' } ]
+  @UI.lineItem:       [ { position: 30, label: 'Ngày chứng từ' } ]
+  DocumentDate;
+
+  @EndUserText.label: 'Accounting Document'
+  @UI.identification: [ { position: 40 , label: 'Số chứng từ' } ]
+  @UI.lineItem:       [ { position: 40, label: 'Số chứng từ' } ]
+  AccountingDocument;
+  
+  @EndUserText.label: 'Diễn giải'
+  @UI.identification: [ { position: 50 , label: 'Diễn giải' } ]
+  @UI.lineItem:       [ { position: 50, label: 'Diễn giải' } ]
+  DocumentItemText;
+
+  @EndUserText.label: 'Journal entry type'
+  @UI.identification: [ { position: 60 , label: 'Loại bút toán' } ]
+  @UI.lineItem:       [ { position: 60, label: 'Loại bút toán' } ]
+  AccountingDocumentType;
+
+  @EndUserText.label: 'Mã Vendor/Customer'
+  @UI.identification: [ { position: 70 , label: 'Mã Vendor/Customer' } ]
+  @UI.lineItem:       [ { position: 70, label: 'Mã Vendor/Customer' } ]
+  OffsettingAccount;
+
+  @EndUserText.label: 'Tên Vendor/Customer'
+  @UI.identification: [ { position: 80 , label: 'Tên Vendor/Customer' } ]
+  @UI.lineItem:       [ { position: 80, label: 'Tên Vendor/Customer' } ]
+  OffsettingAccountName;
+
+  @EndUserText.label: 'Tài khoản đối ứng'
+  @UI.identification: [ { position: 90 , label: 'Tài khoản đối ứng' } ]
+  @UI.lineItem:       [ { position: 90, label: 'Tài khoản đối ứng' } ]
+  ReconciliationAccount;
+
+  @EndUserText.label: 'Debit/Credit Code'
+  @UI.identification: [ { position: 100 , label: 'Debit/Credit Code' } ]
+  @UI.hidden: true
+  DebitCreditCode;
+
+  @EndUserText.label: 'Loại tiền'
+  @UI.identification: [ { position: 110 , label: 'Loại tiền' } ]
+  @UI.lineItem:       [ { position: 110, label: 'Loại tiền' } ]
+  TransactionCurrency;
+
+  @EndUserText.label: 'Tỷ giá'
+  @UI.identification: [ { position: 120 , label: 'Tỷ giá' } ]
+  @UI.lineItem:       [ { position: 120, label: 'Tỷ giá' } ]
+  AbsoluteExchangeRate;
+
+  @EndUserText.label: 'Thu (VND)'
+  @UI.identification: [ { position: 150 , label: 'Thu (VND)' } ]
+  @UI.lineItem:       [ { position: 150, label: 'Thu (VND)' } ]
+  ThuVND_char;
+
+  @EndUserText.label: 'Chi (VND)'
+  @UI.identification: [ { position: 160 , label: 'Chi (VND)' } ]
+  @UI.lineItem:       [ { position: 160, label: 'Chi (VND)' } ]
+  ChiVND_char;
+
+@UI.hidden: true
+  @EndUserText.label: 'Thu (Ngoại tệ)'
+  @UI.identification: [ { position: 170 , label: 'Thu (Ngoại tệ)' } ]
+  @UI.lineItem:       [ { position: 170, label: 'Thu (Ngoại tệ)' } ]
+  ThuNgoaiTe_char;
+@UI.hidden: true
+  @EndUserText.label: 'Chi (Ngoại tệ)'
+  @UI.identification: [ { position: 180 , label: 'Chi (Ngoại tệ)' } ]
+  @UI.lineItem:       [ { position: 180, label: 'Chi (Ngoại tệ)' } ]
+  ChiNgoaiTe_char;
+  
+  @EndUserText.label: 'Dư đầu kỳ (VND)'
+  @UI.identification: [ { position: 190 , label: 'Tồn (VND)' } ]
+  @UI.lineItem:       [ { position: 190, label: 'Tồn (VND)' } ]
+  TonVND_char;
+@UI.hidden: true
+  @EndUserText.label: 'Dư đầu kỳ (Ngoại tệ)'
+  @UI.identification: [ { position: 200 , label: 'Tồn (Ngoại tệ)' } ]
+  @UI.lineItem:       [ { position: 200, label: 'Tồn (Ngoại tệ)' } ]
+  TonNgoaiTe_char;
+
+
+  @UI.hidden: true
+  CurrentYear;
+
+
+
+
+}

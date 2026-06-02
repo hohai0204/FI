@@ -1,0 +1,5 @@
+@EndUserText.label: 'Sổ tổng hợp công nợ phải thu KH'
+define service ZUI_ZRM02 {
+  expose ZFA_I_ZRM02;
+  expose zfa_i_zrm02_lines;
+}

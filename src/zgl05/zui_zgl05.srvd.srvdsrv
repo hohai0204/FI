@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service definition ZGL05'
+define service Zui_zgl05 {
+  expose ZFA_CE_ZGL05  as ZGL05;
+  expose zfa_i_zgl05_h as Header;
+  expose zfa_i_zgl05_i as Item;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination for ZGL02_EX'
+define service ZFA_UI_ZGL02_EX
+  provider contracts odata_v4_ui {
+  expose ZFA_R_ZGL02_EX as ZGL02_EX;
+}

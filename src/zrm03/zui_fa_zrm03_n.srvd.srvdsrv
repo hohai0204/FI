@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_FA_ZRM03_01'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_FA_ZRM03_01'
+  }
+}
+define service ZUI_FA_ZRM03_N
+  provider contracts odata_v4_ui {
+  expose ZC_FA_ZRM03_01;
+}

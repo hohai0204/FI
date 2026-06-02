@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition ZRM02 export excel'
+define service ZUI_ZRM02_EXC {
+  expose zfa_i_zrm02_exc_lines;
+}

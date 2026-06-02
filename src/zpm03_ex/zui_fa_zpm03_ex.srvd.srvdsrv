@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition ZPM03 ( Form )'
+define service ZUI_FA_ZPM03_EX {
+  expose ZFA_I_ZPM03_EX;
+}

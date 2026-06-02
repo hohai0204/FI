@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for ZUI_FA_ZRM01_EX_O4'
+define service ZUI_FA_ZRM01_EX_O4 {
+  expose ZI_FA_ZRM01_EX;
+}

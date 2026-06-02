@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination for ZGL02'
+define service ZFA_UI_ZGL02 {
+  expose ZFA_R_ZGL02 as ZGL02;
+}

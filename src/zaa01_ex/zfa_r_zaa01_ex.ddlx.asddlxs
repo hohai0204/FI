@@ -1,0 +1,164 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Báo cáo tình hình tăng giảm tài sản',
+    typeNamePlural: 'Báo cáo tình hình tăng giảm tài sản'
+  }
+}
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Assetnumber'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Assetnumber'
+
+annotate entity ZFA_R_ZAA01_EX
+    with 
+{
+   @EndUserText.label: 'Company code'
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [
+    { entity:  { name:    'I_CompanyCode',
+                 element: 'CompanyCode' }
+    }]
+  companycode;
+  @EndUserText.label: 'Asset class'
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [
+    { entity:  { name:    'I_AssetClass',
+                 element: 'AssetClass' }
+    }]
+  AssetClass;
+  @EndUserText.label: 'Cost center'
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.valueHelpDefinition: [
+    { entity:  { name:    'I_CostCenter',
+                 element: 'CostCenter' }
+    }]
+  CostCenter;
+  @EndUserText.label: 'Asset number'
+  @UI.selectionField: [{ position: 40 }]
+  @Consumption.valueHelpDefinition: [
+    { entity:  { name:    'I_masterfixedasset',
+                 element: 'MasterFixedAsset' }
+    }]
+  masterfixedasset;
+  @EndUserText.label: 'Asset sub number'
+  @UI.selectionField: [{ position: 50 }]
+  @Consumption.valueHelpDefinition: [
+    { entity:  { name:    'I_FixedAsset',
+                 element: 'FixedAsset' }
+    }]
+  fixedasset;
+  @UI.selectionField: [{ position: 60 }]
+  @EndUserText.label: 'Từ kỳ'
+  @Consumption.filter.mandatory: true
+  Tu_ky;
+  @UI.selectionField: [{ position: 70 }]
+  @EndUserText.label: 'Đến kỳ'
+  Den_ky;
+  @Consumption.filter.mandatory: true
+  @UI.selectionField: [{ position: 80 }]
+  @EndUserText.label: 'Năm báo cáo'
+  Nam_bao_cao;
+//  @UI.selectionField: [{ position: 90 }]
+//  @EndUserText.label: 'Người lập'
+//  Nguoi_lap;
+//  @UI.selectionField: [{ position: 100 }]
+//  @EndUserText.label: 'Kế toán'
+//  Ke_toan;
+//  @UI.selectionField: [{ position: 110 }]
+//  @EndUserText.label: 'Giám đốc'
+//  Giam_doc;
+  
+  
+  @UI.lineItem: [{ position: 10 }]
+  @EndUserText.label: 'Nhóm tài sản (Asset class)'
+  AssetClass_Desc;
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText.label: 'Mã tài sản'
+  Assetnumber;
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Tên tài sản'
+  MasterFixedAssetDescription;
+  @UI.lineItem: [{ position: 40 }]
+  @EndUserText.label: 'Plant'
+  plant;
+  @UI.lineItem: [{ position: 50 }]
+  @EndUserText.label: 'Profit Center'
+  profitcenter;
+  @UI.lineItem: [{ position: 60 }]
+  @EndUserText.label: 'Vị trí'
+  assetlocation_desc;
+  @UI.lineItem: [{ position: 70 }]
+  @EndUserText.label: 'Ngày phát sinh'
+  AssetCapitalizationDate;
+  @UI.lineItem: [{ position: 80 }]
+  @EndUserText.label: 'Ngày kết thúc'
+  AssetDeactivationDate;
+  @UI.lineItem: [{ position: 90 }]
+  @EndUserText.label: 'Trạng thái'
+  Trang_Thai;
+  @UI.lineItem: [{ position: 100 }]
+  @EndUserText.label: 'Tk Nguyên giá'
+  tk_nguyen_gia;
+  @UI.lineItem: [{ position: 110 }]
+  @EndUserText.label: 'Tk khấu hao'
+  tk_khau_hao;
+  @UI.lineItem: [{ position: 120 }]
+  @EndUserText.label: 'Tk chi phí'
+  tk_chi_phi;
+  @UI.lineItem: [{ position: 130 }]
+  @EndUserText.label: 'Cost center'
+  costcenter_desc;
+  @UI.lineItem: [{ position: 140 }]
+  @EndUserText.label: 'Mã cũ'
+  Inventory;
+  @UI.lineItem: [{ position: 150 }]
+  @EndUserText.label: 'Ngày bắt đầu khấu hao'
+  DepreciationStartDate;
+  @UI.lineItem: [{ position: 160 }]
+  @EndUserText.label: 'Số lượng'
+  Quantity;
+  @UI.lineItem: [{ position: 170 }]
+  @EndUserText.label: 'Đơn vị tính'
+  BaseUnit;
+  @UI.lineItem: [{ position: 180 }]
+  @EndUserText.label: 'Số kỳ khấu hao'
+  So_ky_khau_hao;
+  @UI.lineItem: [{ position: 190 }]
+  @EndUserText.label: 'Số kỳ đã khấu hao'
+  So_ky_da_khua_hao;
+  @UI.lineItem: [{ position: 200 }]
+  @EndUserText.label: 'Số kỳ khấu hao còn lại'
+  So_ky_khao_hao_con_lai;
+  @UI.lineItem: [{ position: 210 }]
+  @EndUserText.label: 'Nguyên giá đầu kỳ'
+  nguyen_gia_dau_ky;
+  @UI.lineItem: [{ position: 220 }]
+  @EndUserText.label: 'Khấu hao lũy kế đâu kỳ'
+  khau_hao_luy_ke_dau_ky;
+  @UI.lineItem: [{ position: 230 }]
+  @EndUserText.label: 'Giá trị còn lại đầu kỳ'
+  gia_tri_con_lai_dau_ky;
+  @UI.lineItem: [{ position: 240 }]
+  @EndUserText.label: 'Tăng nguyên giá trong kỳ'
+  tang_nguyen_gia_trong_ki;
+  @UI.lineItem: [{ position: 250 }]
+  @EndUserText.label: 'Tăng khấu hao trong kỳ'
+  tang_khau_hao_trong_ki;
+  @UI.lineItem: [{ position: 260 }]
+  @EndUserText.label: 'Giảm nguyên giá trong kỳ'
+  giam_nguyen_gia_trong_ky;
+  @UI.lineItem: [{ position: 270 }]
+  @EndUserText.label: 'Giảm khấu hao trong kỳ'
+  giam_khau_hao_trong_ky;
+  @UI.lineItem: [{ position: 280 }]
+  @EndUserText.label: 'Nguyên giá cuối kỳ'
+  nguyen_gia_cuoi_ky;
+  @UI.lineItem: [{ position: 290 }]
+  @EndUserText.label: 'Khấu hao lũy kế cuối kỳ'
+  khau_hao_luy_ke_cuoi_ky;
+  @UI.lineItem: [{ position: 300 }]
+  @EndUserText.label: 'Giá trị còn lại cuối kỳ'
+  gia_tri_con_lai_cuoi_ky;
+    
+}

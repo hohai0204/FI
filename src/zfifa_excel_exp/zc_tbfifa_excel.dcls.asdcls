@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_TBFIFA_EXCEL'
+@MappingRole: true
+define role ZC_TBFIFA_EXCEL {
+  grant select on ZC_TBFIFA_EXCEL
+  where INHERITING CONDITIONS FROM ENTITY ZR_TBFIFA_EXCEL REPLACING { ROOT WITH _BaseEntity };
+}

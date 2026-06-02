@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination for ZAA01 (Excel)'
+define service ZFA_UI_ZAA01_EX
+  provider contracts odata_v4_ui {
+  expose ZFA_R_ZAA01_EX;
+}

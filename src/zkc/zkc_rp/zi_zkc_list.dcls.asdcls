@@ -1,0 +1,10 @@
+@EndUserText.label: 'Access Control ZKC'
+@MappingRole: true
+define role ZI_ZKC_LIST {
+    grant 
+        select
+            on
+                ZI_ZKC_LIST
+                    where
+                        ( CompanyCode ) = aspect pfcg_auth( F_BKPF_BUK, BUKRS, ACTVT = '03');  
+}

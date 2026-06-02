@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TBZMAPKC'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TBZMAPKC'
+  }
+}
+define service ZUI_TBZMAPKC_O4
+  provider contracts odata_v4_ui {
+  expose ZC_TBZMAPKC000;
+}

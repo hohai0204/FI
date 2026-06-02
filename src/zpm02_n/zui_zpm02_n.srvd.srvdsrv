@@ -1,0 +1,5 @@
+@EndUserText.label: 'Sổ tổng hợp công nợ phải trả NCC'
+define service ZUI_ZPM02_N {
+  expose ZFA_I_ZPM02N;
+  expose zfa_i_zpm02n_lines;
+}

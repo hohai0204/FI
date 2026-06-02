@@ -1,0 +1,48 @@
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'View Fi OTA'
+@Metadata.ignorePropagatedAnnotations: true
+define view entity ZI_View_FI_OTA as select from I_JournalEntryItemOneTimeData
+{
+    key CompanyCode,
+    key AccountingDocument,
+    key FiscalYear,
+    key AccountingDocumentItem,
+    BusinessPartnerName1,
+    BusinessPartnerName2,
+    BusinessPartnerName3,
+    BusinessPartnerName4,
+    Country,
+    CityName,
+    POBox,
+    POBoxPostalCode,
+    PostalCode,
+    IsVATLiable,
+    Region,
+    TaxID1,
+    TaxID2,
+    TaxID3,
+    TaxID4,
+    TaxID5,
+    StreetAddressName,
+    ResponsibleType,
+    TaxNumberType,
+    BusinessType,
+    IndustryType,
+    OneTimeAccountBPSalutationText,
+    AddressID,
+    AccountingClerkInternetAddress,
+    BankAccount,
+    BankNumber,
+    BankCountry,
+    PostOfficeBankAccount,
+    PaymentSystem,
+    AliasType,
+    BPBankAccountAliasName,
+    IsNaturalPerson,
+    IsOneTimeAccount,
+    BankControlKey,
+    OneTimeAcctCntrySpecificRef1,
+    DataExchangeInstructionKey,
+    DataMediumExchangeControl
+}

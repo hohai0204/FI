@@ -1,0 +1,10 @@
+@EndUserText.label: 'Access Control  Phiếu Chi'
+@MappingRole: true
+define role ZFA_R_PHIEUCHI {
+    grant 
+        select
+            on
+                ZFA_R_PHIEUCHI
+                    where
+                        ( CompanyCode ) = aspect pfcg_auth( F_BKPF_BUK, BUKRS, ACTVT = '03');
+}

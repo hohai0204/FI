@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition ZKC'
+define service ZUI_FI_ZKC {
+  expose ZI_ZKC_MAIN;
+}
