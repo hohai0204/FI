@@ -1,4 +1,0 @@
-@EndUserText.label: 'Service Definition Phiếu Thu'
-define service ZUI_FA_RM04 {
-  expose ZFA_C_PHIEUTHU_01;
-}
