@@ -1,4 +1,0 @@
-@EndUserText.label: 'Service Defination for ZGL07'
-define service ZUI_FA_ZGL07 {
-  expose ZFA_C_ZGL07 as ZGL07;
-}
