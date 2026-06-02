@@ -1,0 +1,51 @@
+managed implementation in class ZBP_FA_TB_ZFES2 unique;
+strict ( 2 );
+with draft;
+define behavior for ZFA_R_TB_ZFES2 alias ZfaRTbZfes2
+persistent table ztb_zfes2
+draft table ztb_zfes2_d
+etag master LastChangedAt
+lock master total etag LocalLastChangedAt
+authorization master ( global )
+
+{
+  field ( numbering : managed )
+  Uuid;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Uuid, FsVersion, FinancialStatement;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb_zfes2
+    {
+      Uuid               = uuid;
+      FsVersion          = fs_version;
+      FinancialStatement = financial_statement;
+      Node_Text          = node_text;
+      Bold               = bold;
+      Italic             = italic;
+      ThuyetMinh         = thuyet_minh;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedBy      = last_changed_by;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+}

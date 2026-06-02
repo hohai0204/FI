@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Bảng cân đối kế toán",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Bảng cân đối kế toán"
+  },
+  "ui5AppDetails": {
+    "appId": "zgl01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_20EFFC4B3E0D21E266F2EAF72A1844AC14E706E2_TM",
+    "semanticObject": "ZGL01",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_20EFFC4B3E0D21E266F2EAF72A1844AC14E706E2_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Bảng cân đối kế toán",
+        "subtitle": "ZGL01"
+      }
+    }
+  ]
+}
