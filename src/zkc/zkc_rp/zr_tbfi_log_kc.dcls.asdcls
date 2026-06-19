@@ -1,6 +1,0 @@
-@EndUserText.label: 'ZR_TBFI_LOG_KC'
-@MappingRole: true
-define role ZR_TBFI_LOG_KC {
-  grant select on ZR_TBFI_LOG_KC
-  where TRUE;
-}

@@ -1,6 +1,0 @@
-@EndUserText.label: 'ZR_TBZMAPKC000'
-@MappingRole: true
-define role ZR_TBZMAPKC000 {
-  grant select on ZR_TBZMAPKC000
-  where       ( Bukrs ) = aspect pfcg_auth( F_BKPF_BUK, BUKRS, ACTVT = '03');
-}

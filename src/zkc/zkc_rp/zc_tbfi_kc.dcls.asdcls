@@ -1,6 +1,0 @@
-@EndUserText.label: 'ZC_TBFI_KC'
-@MappingRole: true
-define role ZC_TBFI_KC {
-  grant select on ZC_TBFI_KC
-  where INHERITING CONDITIONS FROM ENTITY ZR_TBFI_KC REPLACING { ROOT WITH _BaseEntity };
-}
